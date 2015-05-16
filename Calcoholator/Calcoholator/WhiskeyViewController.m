@@ -14,24 +14,53 @@
 
 @implementation WhiskeyViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void) calcAndUpdateAlcolator {
+    
+    //Alcohol constants
+    const int ouncesInBeerGlass = 12;
+    const float ouncesInOneWhiskeyGlass = 1;
+    const float alcoholPercentageOfWhiskey = 0.4;
+    
+    //Beer calculation
+    int numberOfBeers = self.beerCountSlider.value;
+    
+    float alcoholPercentageOfBeer = [self.beerPercentTextField.text floatValue] / 100;
+    float ouncesOfAlcoholPerBeer = alcoholPercentageOfBeer * ouncesInBeerGlass;
+    float ouncesOfAlcoholTotal = numberOfBeers * ouncesOfAlcoholPerBeer;
+    
+    //Whiskey calculation
+    float ouncesOfAlcoholPerWhiskeyGlass = ouncesInOneWhiskeyGlass * alcoholPercentageOfWhiskey;
+    float numberOfWhiskeyGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWhiskeyGlass;
+    
+    //Decide to use plural or singluar
+    NSString *beerText;
+    
+    if (numberOfBeers == 1) {
+        beerText = NSLocalizedString(@"beer", @"singular of beer");
+    } else {
+        beerText = NSLocalizedString(@"beers", @"plural of beer");
+    }
+    
+    NSString *whiskeyText;
+    
+    if (numberOfWhiskeyGlassesForEquivalentAlcoholAmount == 1) {
+        whiskeyText = NSLocalizedString(@"shot", @"singular of shot");
+    } else {
+        whiskeyText = NSLocalizedString(@"shots", @"plural of shot");
+    }
+    
+    //update labels
+    self.numberOfBeersLabel.text = [NSString stringWithFormat:@"%d %@", numberOfBeers, beerText];
+    
+    //if no alcohol percentage has been entered, keep instructions in results label.
+    if (alcoholPercentageOfBeer != 0) {
+        NSString *resultText = [NSString stringWithFormat:@"%d %@ contains as much alcohol as %.1f %@ of whiskey", numberOfBeers, beerText, numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
+        
+        self.resultLabel.text = resultText;
+        
+        self.title = [NSString stringWithFormat:@"Wine (%.1f %@)", numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
+        
+    }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
