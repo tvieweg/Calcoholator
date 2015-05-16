@@ -15,7 +15,6 @@
 		692F8B1E1B07DD3C00912279 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692F8B1C1B07DD3C00912279 /* LaunchScreen.xib */; };
 		692F8B2A1B07DD3C00912279 /* CalcoholatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 692F8B291B07DD3C00912279 /* CalcoholatorTests.m */; };
 		692F8B351B07F2CF00912279 /* WhiskeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692F8B341B07F2CF00912279 /* WhiskeyViewController.m */; };
-		692F8B381B07F48B00912279 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692F8B371B07F48B00912279 /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +43,6 @@
 		692F8B291B07DD3C00912279 /* CalcoholatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcoholatorTests.m; sourceTree = "<group>"; };
 		692F8B331B07F2CF00912279 /* WhiskeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiskeyViewController.h; sourceTree = "<group>"; };
 		692F8B341B07F2CF00912279 /* WhiskeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiskeyViewController.m; sourceTree = "<group>"; };
-		692F8B361B07F48B00912279 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
-		692F8B371B07F48B00912279 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +86,6 @@
 			children = (
 				692F8B111B07DD3C00912279 /* AppDelegate.h */,
 				692F8B121B07DD3C00912279 /* AppDelegate.m */,
-				692F8B361B07F48B00912279 /* MainMenuViewController.h */,
-				692F8B371B07F48B00912279 /* MainMenuViewController.m */,
 				692F8B171B07DD3C00912279 /* Main.storyboard */,
 				692F8B141B07DD3C00912279 /* ViewController.h */,
 				692F8B151B07DD3C00912279 /* ViewController.m */,
@@ -233,7 +228,6 @@
 				692F8B351B07F2CF00912279 /* WhiskeyViewController.m in Sources */,
 				692F8B131B07DD3C00912279 /* AppDelegate.m in Sources */,
 				692F8B101B07DD3C00912279 /* main.m in Sources */,
-				692F8B381B07F48B00912279 /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +424,7 @@
 				692F8B2F1B07DD3C00912279 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		692F8B301B07DD3C00912279 /* Build configuration list for PBXNativeTarget "CalcoholatorTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +433,7 @@
 				692F8B321B07DD3C00912279 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

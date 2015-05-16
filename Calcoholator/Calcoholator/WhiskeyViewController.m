@@ -14,7 +14,7 @@
 
 @implementation WhiskeyViewController
 
-- (void) calcAndUpdateAlcolator {
+- (float) calcAndUpdateAlcolator {
     
     //Alcohol constants
     const int ouncesInBeerGlass = 12;
@@ -61,6 +61,7 @@
         self.title = [NSString stringWithFormat:@"Wine (%.1f %@)", numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
         
     }
+    return numberOfWhiskeyGlassesForEquivalentAlcoholAmount;
 }
 
 @end

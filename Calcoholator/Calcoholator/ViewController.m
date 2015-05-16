@@ -35,14 +35,15 @@
 - (IBAction)sliderValueDidChange:(UISlider *)sender {
     NSLog(@"Value of slider changed to %f", sender.value);
     [self.beerPercentTextField resignFirstResponder];
-    [self calcAndUpdateAlcolator];
+    float drinkResult = [self calcAndUpdateAlcolator];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) drinkResult]];
 }
 
 - (IBAction)tapGestureDidFire:(id)sender {
     [self.beerPercentTextField resignFirstResponder];
 }
 
-- (void) calcAndUpdateAlcolator {
+- (float) calcAndUpdateAlcolator {
     
     //alcohol constants
     const int ouncesInBeerGlass = 12;
@@ -88,6 +89,7 @@
         
         self.title = [NSString stringWithFormat:@"Wine (%.1f %@)", numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
     }
+    return numberOfWineGlassesForEquivalentAlcoholAmount;
 }
 
 @end
